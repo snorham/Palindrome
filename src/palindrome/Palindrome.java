@@ -8,19 +8,32 @@ import java.util.Scanner;
 public class Palindrome {
 
     public static void main(String[] args) {
+        boolean repeater = true;
+        do {
 
-        String entry;
-        String reverseEntry = "";
-        Scanner scanIt = new Scanner(System.in);
-        int length;
+            String entry;
+            String reverseEntry = "";
+            Scanner scanIt = new Scanner(System.in);
+            int length;
 
-        System.out.println("==SUPER PALINDROME CHECKER==");
-        System.out.println("Please enter a word, phrase, or whatever you want:");
-        entry = scanIt.nextLine();
+            System.out.println("==SUPER PALINDROME CHECKER==");
+            System.out.println("Please enter a word, phrase, or whatever you want:");
+            entry = scanIt.nextLine();
 
-        for (int currentCharSpot = (entry.length() - 1) ; currentCharSpot >= 0 ; currentCharSpot-- )
-            reverseEntry = reverseEntry + entry.charAt(currentCharSpot);
+            for (int currentCharSpot = (entry.length() - 1); currentCharSpot >= 0; currentCharSpot--)
+                reverseEntry = reverseEntry + entry.charAt(currentCharSpot);
 
+            System.out.println("\"" + entry + "\" backwards is \"" + reverseEntry);
+
+            if (entry.equals(reverseEntry)) {
+                System.out.println("Congratulations.  You have yourself a palindrome.");
+            }
+            else {
+                System.out.println("Sorry.  You didn't enter a palindrome.");
+            }
+
+        }while(repeater);
+        System.out.println();
 
     }
 }
