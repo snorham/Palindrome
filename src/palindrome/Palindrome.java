@@ -8,7 +8,9 @@ import java.util.Scanner;
 public class Palindrome {
 
     public static void main(String[] args) {
-        boolean repeater = true;
+        boolean invalid = true, repeater = true;
+        int stayChoice;
+
         do {
 
             String entry;
@@ -36,6 +38,49 @@ public class Palindrome {
             }
 
             System.out.println();
+            System.out.println("Would you like to check another palindrome?");
+            System.out.println("1) Yes");
+            System.out.println("2) No");
+            System.out.println();
+
+            do {
+                if (scanIt.hasNextInt()) {
+                    stayChoice = scanIt.nextInt();
+
+                    if (stayChoice == 2) {
+                        invalid = false;
+                        repeater = false;
+                        System.out.println();
+                        System.out.println();
+                        System.out.println("GOODBYE! :)");
+                    }
+
+                    else {
+                        if (stayChoice == 1) {
+                            scanIt.nextLine();
+                            invalid = false;
+                            repeater = true;
+                            System.out.println();
+                            System.out.println();
+                        } else {
+                            scanIt.nextLine();
+                            invalid = true;
+                            repeater = true;
+                            System.out.println();
+                            System.out.println();
+                            System.out.println("[Error: Incorrect Entry]");
+                        }
+                    }
+                }
+                else {
+                    invalid = true;
+                    repeater = true;
+                    scanIt.nextLine();
+                    System.out.println();
+                    System.out.println("[Error: Incorrect Entry]");
+                }
+
+            }while(invalid);
 
         }while(repeater);
         System.out.println();
