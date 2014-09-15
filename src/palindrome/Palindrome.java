@@ -38,12 +38,14 @@ public class Palindrome {
             }
 
             System.out.println();
+
+            do {
             System.out.println("Would you like to check another palindrome?");
             System.out.println("1) Yes");
             System.out.println("2) No");
             System.out.println();
+            System.out.print("Enter 1 (Yes) or 2 (No): ");
 
-            do {
                 if (scanIt.hasNextInt()) {
                     stayChoice = scanIt.nextInt();
 
